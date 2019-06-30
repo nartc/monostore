@@ -1,18 +1,18 @@
-import actionHelpers from "./actionStateHelpers";
+import actionHelpers from './actionStateHelpers';
 
 const configs = {
-  debounce: 50,
-  helpers: actionHelpers,
-  noChange: {},
-  onStateChanged: () => {},
-  onActionDispatching: () => {},
-  onActionDispatched: () => {}
+	debounce: 50,
+	helpers: actionHelpers,
+	noChange: {},
+	onStateChanged: () => {},
+	onActionDispatching: () => {},
+	onActionDispatched: () => {}
 };
 
 export default function configure(options = {}) {
-  if (!arguments.length) return configs;
-  if (typeof options === "function") {
-    options = options(configs);
-  }
-  Object.assign(configs, options);
+	if (!arguments.length) return configs;
+	if (typeof options === 'function') {
+		options = options(configs);
+	}
+	return Object.assign(configs, options);
 }
